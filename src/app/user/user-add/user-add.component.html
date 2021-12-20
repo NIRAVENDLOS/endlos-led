@@ -1,0 +1,81 @@
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card class="card-widget mx-3 mt-3">
+      Add User
+    </mat-card>
+    <mat-card class="card-widget mx-3 mb-3">
+      <form [formGroup]="form" (ngSubmit)="onFirstSubmit()">
+        <mat-card-content>
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="First name" [formControl]="form.controls['firstname']">
+              </mat-form-field>
+              <small *ngIf="form.controls['firstname'].hasError('required') && form.controls['firstname'].touched" class="mat-text-warn">You
+                must include a first name.</small>
+              <small *ngIf="form.controls['firstname'].hasError('minlength') && form.controls['firstname'].touched" class="mat-text-warn">Your
+                first name must be at least 5 characters long.</small>
+              <small *ngIf="form.controls['firstname'].hasError('maxlength') && form.controls['firstname'].touched" class="mat-text-warn">Your
+                first name cannot exceed 10 characters.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Last name" [formControl]="form.controls['lastname']">
+              </mat-form-field>
+              <small *ngIf="form.controls['lastname'].hasError('required') && form.controls['lastname'].touched" class="mat-text-warn">You
+                must include a last name.</small>
+              <small *ngIf="form.controls['lastname'].hasError('minlength') && form.controls['lastname'].touched" class="mat-text-warn">Your
+                first name must be at least 5 characters long.</small>
+              <small *ngIf="form.controls['lastname'].hasError('maxlength') && form.controls['lastname'].touched" class="mat-text-warn">Your
+                first name cannot exceed 10 characters.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Email address" [formControl]="form.controls['email']" type="email">
+              </mat-form-field>
+              <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="mat-text-warn">You
+                must include an email address.</small>
+              <small *ngIf="form.controls['email'].errors?.email && form.controls['email'].touched" class="mat-text-warn">You
+                must include a valid email address.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Mobile number (15417543010)" [formControl]="form.controls['number']" type="tel" pattern="[0-9]{10}">
+              </mat-form-field>
+              <small *ngIf="form.controls['number'].hasError('required') && form.controls['number'].touched" class="mat-text-warn">You
+                must include phone number.</small>
+              <small *ngIf="form.controls['number'].errors?.phone && form.controls['number'].touched" class="mat-text-warn">You
+                must include a valid phone number.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Password" [formControl]="form.controls['password']" type="password">
+              </mat-form-field>
+              <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">You
+                must include password.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Confirm Password" [formControl]="form.controls['confirmPassword']" type="password">
+              </mat-form-field>
+              <small *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched"
+                class="mat-text-warn">You must include confirm password.</small>
+              <small *ngIf="form.controls['confirmPassword'].errors?.equalTo" class="mat-text-warn">Passwords do not math.</small>
+            </div>
+          </div>
+
+        </mat-card-content>
+        <hr>
+        <mat-card-actions class="px-1">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>

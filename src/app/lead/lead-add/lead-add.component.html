@@ -1,0 +1,150 @@
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card class="card-widget mx-3 mt-3">
+      Add Lead
+    </mat-card>
+    <mat-card class="card-widget mx-3 mb-3">
+      <form [formGroup]="form" (ngSubmit)="onFirstSubmit()">
+        <mat-card-content>
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Name Of Company" [formControl]="form.controls['NameOfCompany']">
+              </mat-form-field>
+              <small *ngIf="form.controls['NameOfCompany'].hasError('required') && form.controls['NameOfCompany'].touched" class="mat-text-warn">You
+                must include a Name Of Company.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Product" [formControl]="form.controls['Product']">
+              </mat-form-field>
+              <small *ngIf="form.controls['Product'].hasError('required') && form.controls['Product'].touched" class="mat-text-warn">You
+                must include a Product.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Contact Person" [formControl]="form.controls['ContactPerson']">
+              </mat-form-field>
+              <small *ngIf="form.controls['ContactPerson'].hasError('required') && form.controls['ContactPerson'].touched" class="mat-text-warn">You
+                must include a Contact Person.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Mobile Number" [formControl]="form.controls['MobileNumber']" type="tel" pattern="[0-9]{10}">
+              </mat-form-field>
+              <small *ngIf="form.controls['MobileNumber'].hasError('required') && form.controls['MobileNumber'].touched" class="mat-text-warn">You
+                must include a Mobile Number.</small>
+                <small *ngIf="form.controls['MobileNumber'].errors?.phone && form.controls['MobileNumber'].touched" class="mat-text-warn">You
+                  must include a valid Mobile Number.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Email address" [formControl]="form.controls['Email']" type="email">
+              </mat-form-field>
+              <small *ngIf="form.controls['Email'].hasError('required') && form.controls['Email'].touched" class="mat-text-warn">You
+                must include an email address.</small>
+              <small *ngIf="form.controls['Email'].errors?.email && form.controls['Email'].touched" class="mat-text-warn">You
+                must include a valid email address.</small>
+            </div>
+            <div fxFlex.gt-sm="50%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Address" [formControl]="form.controls['Address']">
+              </mat-form-field>
+              <small *ngIf="form.controls['Address'].hasError('required') && form.controls['Address'].touched" class="mat-text-warn">You
+                must include a Mobile Number.</small>
+            </div>
+          </div>
+
+          <div class="mb-1">
+
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Country" [formControl]="form.controls['Country']">
+              </mat-form-field>
+              <small *ngIf="form.controls['Country'].hasError('required') && form.controls['Country'].touched" class="mat-text-warn">You
+                must include a Name Of Country.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="State" [formControl]="form.controls['State']">
+              </mat-form-field>
+              <small *ngIf="form.controls['State'].hasError('required') && form.controls['State'].touched" class="mat-text-warn">You
+                must include a State.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="City" [formControl]="form.controls['City']">
+              </mat-form-field>
+              <small *ngIf="form.controls['City'].hasError('required') && form.controls['City'].touched" class="mat-text-warn">You
+                must include a City.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Source Of Lead" [formControl]="form.controls['SourceOfLead']">
+              </mat-form-field>
+              <small *ngIf="form.controls['SourceOfLead'].hasError('required') && form.controls['SourceOfLead'].touched" class="mat-text-warn">You
+                must include a Name Of Source Of Lead.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Communicated" [formControl]="form.controls['Communicated']">
+              </mat-form-field>
+              <small *ngIf="form.controls['Communicated'].hasError('required') && form.controls['Communicated'].touched" class="mat-text-warn">You
+                must include a Communicated.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Who Communicated" [formControl]="form.controls['WhoCommunicated']">
+              </mat-form-field>
+              <small *ngIf="form.controls['WhoCommunicated'].hasError('required') && form.controls['WhoCommunicated'].touched" class="mat-text-warn">You
+                must include a WhoCommunicated.</small>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap">
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Last Communication Detail" [formControl]="form.controls['LastCommunicationDetail']">
+              </mat-form-field>
+              <small *ngIf="form.controls['LastCommunicationDetail'].hasError('required') && form.controls['LastCommunicationDetail'].touched" class="mat-text-warn">You
+                must include a Name Of Last Communication Detail.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Date Of Next FollowUp" [formControl]="form.controls['DateOfNextFollowUp']" type="date">
+              </mat-form-field>
+              <small *ngIf="form.controls['DateOfNextFollowUp'].hasError('required') && form.controls['DateOfNextFollowUp'].touched" class="mat-text-warn">You
+                must include a date.</small>
+              <small *ngIf="form.controls['DateOfNextFollowUp'].errors?.date && form.controls['DateOfNextFollowUp'].touched" class="mat-text-warn">You
+                must include a valid date.</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex="100" class="pa-1">
+              <mat-form-field style="width: 100%">
+                <input matInput placeholder="Lead Status" [formControl]="form.controls['LeadStatus']">
+              </mat-form-field>
+              <small *ngIf="form.controls['LeadStatus'].hasError('required') && form.controls['LeadStatus'].touched" class="mat-text-warn">You
+                must include a LeadStatus.</small>
+            </div>
+          </div>
+
+        </mat-card-content>
+        <hr>
+        <mat-card-actions class="px-1">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>

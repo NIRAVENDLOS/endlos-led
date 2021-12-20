@@ -1,0 +1,27 @@
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card class="card-widget mx-3 mt-3">
+      sss
+    </mat-card>
+    <mat-card class="card-widget mx-3 mb-3">
+      <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0"
+      [rowHeight]="'auto'">
+      <ngx-datatable-column name="Project">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{row['project']}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Due Date">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{row['date'] | date: 'MMMM dd'}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Progress">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <mat-progress-bar mode="determinate" value="{{row['progress']}}" color="primary"></mat-progress-bar>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+    </mat-card>
+  </div>
+</div>
